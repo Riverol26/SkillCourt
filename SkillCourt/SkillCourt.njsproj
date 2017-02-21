@@ -38,6 +38,7 @@
     <Compile Include="routes\signIn.js" />
     <Compile Include="bin\www" />
     <Compile Include="routes\users.js" />
+    <Compile Include="start.js" />
     <Content Include="client\package.json" />
     <Content Include="public\images\facebook-icon.png" />
     <Content Include="public\images\google+-icon.png" />
