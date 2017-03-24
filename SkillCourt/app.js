@@ -12,18 +12,14 @@ var about = require('./routes/about');
 var signIn = require('./routes/signIn');
 var download = require('./routes/download');
 var products = require('./routes/products');
+var standardLogin = require('./routes/standardLogin');
+var standardCreateAccount = require('./routes/standardCreateAccount');
 
-var firebase = require("firebase");
-var config = {
-    apiKey: "AIzaSyC7iWe7sJJeHXLR-qv_bDZr8GRQhHjtztQ",
-    authDomain: "skillcourt-1e97e.firebaseapp.com",
-    databaseURL: "https://skillcourt-1e97e.firebaseio.com",
-    storageBucket: "skillcourt-1e97e.appspot.com",
-    messagingSenderId: "413613777767"
-};
-
-
+var firebase = require('firebase');
 var app = express();
+
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,6 +41,8 @@ app.use('/about', about);
 app.use('/signIn', signIn);
 app.use('/download', download);
 app.use('/products', products);
+app.use('/standardLogin', standardLogin);
+app.use('/standardCreateAccount', standardCreateAccount);
 
 
 // catch 404 and forward to error handler
@@ -80,3 +78,7 @@ app.use(function (err, req, res, next) {
 
 
 module.exports = app;
+
+
+
+

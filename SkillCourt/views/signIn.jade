@@ -2,4 +2,15 @@
 
 block content
     .bodyContent
-        h1 Sign in below
+        .loginButtons
+            img#logButton(
+                src = "/images/facebook-login-button.png"
+                onclick = "logUserFacebook()")
+            .standardOptions
+                a(href = "/standardLogin") Log in 
+                p &nbsp;or 
+                a(href = "/standardCreateAccount") create an account with e-mail
+
+
+    script(src = "/javascripts/signIn.js")
+        

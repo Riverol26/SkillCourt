@@ -6,7 +6,8 @@
 	border: 0
 	vertical-align: baseline
 	width: 100%
-
+	height: 100%
+	bottom: 0
 
 	  
 	
@@ -18,27 +19,26 @@
 
 
 
-.headerContent
+.header
 	z-index: 2
 	position: fixed
 	width: 100%
 	height: 60px
 	line-height: 60px
 	background-color: #444
+	display: block
 
-.headerContent .container
+.header .container
 	position: relative
 	margin: 0 auto
 	width: 94%
-	max-width: 1100px
-	min-width: 450px
 
-.headerContent .logo #logo
+.header .logo #logo
 	float: left
 	height: 50px
 	padding: 5px
 
-.headerContent .container h1
+.header .container h1
 	position: relative
 	top: 0px
 	margin: 0px
@@ -46,49 +46,202 @@
 	font-size: 1.2em
 	color: white
 
-.headerContent .nav
+.header .nav
 	position: absolute
 	right: 0
 	top: -15px
 	height: 60px
 
-.headerContent .nav ul li
-	padding: 0px 5px 0px 5px
-	float: left
-	list-style: none
-
-.headerContent .nav ul li a
+.header h2
 	display: block
 	color:white
 	text-decoration: none
+	cursor: pointer
 
-.headerContent li a:hover
+.header li a:hover
 	background-color: #005f5f
 
 
+.sidenav
+	height: 100%
+	width: 0
+	position: fixed
+	z-index: 1
+	top: 0
+	left: 0
+	background-color: #111
+	overflow-x: hidden
+	padding-top: 60px
+	transition: 0.5s
 
+.sidenav a
+	padding: 8px 8px 8px 32px
+	text-decoration: none
+	font-size: 25px
+	color: #818181
+	display: block
+	transition: 0.3s
+	cursor: pointer
 
+.sidenav a:hover, .offcanvas a:focus
+	color: #f1f1f1
 
+.sidenav .closebtn
+	position: absolute
+	top: 0
+	right: 25px
+	font-size: 36px
+	margin-left: 50px
+
+@media screen and (max-width: 450px)
+	.sidenav
+		padding-top: 15px
+	.sidenav a
+		font-size: 18px
+	#SkillCourtVideo
+		width: 360px
+		height: 202px
+	.bodyContent
+		padding-top: 50px
+	.bodyContent .loginButtons
+		padding: 0
+		margin-top: 5px
+	.bodyContent .loginButtons #logButton
+		padding: 0
+		width: 80%
+	.bodyContent .loginmodal-container 
+		padding: 5%
+		max-width: 90%
+		margin: 0
+	
+		
 
 //-----------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------
-
-
-
 
 
 
 .bodyContent
 	text-align: center
-	padding: 150px
+	padding-top: 150px
+	padding-bottom: 150px
+	position: relative
+	min-height: 350px
+	display: block
+	
+.bodyContent .inline
+	display: inline
+
+.bodyContent a
+	
+
+.bodyContent a:hover
+	cursor: pointer
+	
+
+	
+
+
+//----------------Index Page-----------------------
+
+
+
+//----------------About Page-----------------------
+
+.video-container 
+	position: relative
+	padding-bottom: 56.25%
+	padding-top: 30px
+	height: 0
+	overflow: hidden
+
+.video-container iframe, .video-container object, .video-container embed
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+
+//----------------Sign In Page---------------------
+
+.bodyContent .loginButtons
+	padding: 25px
+
+.bodyContent .loginButtons #logButton
+	margin: 25px
+	cursor: pointer
+
+.bodyContent p
+	display: inline-block
+
+.bodyContent .standardOptions p , .bodyContent .standardOptions a
+	display: inline
+	
+
+//---------------Standard Login Page-------------
+
+.loginmodal-container 
+	padding: 30px
+	max-width: 350px
+	width: 100% !important
+	margin: 0 auto
+	border-radius: 2px
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)
+	overflow: hidden
+	font-family: roboto
+
+
+.loginmodal-container h1 
+	text-align: center
+	font-size: 1.8em
+	font-family: roboto
+
+
+.loginmodal-container button
+	width: 100%
+	display: block
+	margin-bottom: 10px
 	position: relative
 
-#SkillCourtVideo
-	width: 560
-	height: 315
-	frameborder: 0
-	allowfullscreen: true
+
+.loginmodal-container input
+	height: 44px
+	font-size: 16px
+	width: 100%
+	margin-bottom: 10px
+	-webkit-appearance: none
+	background: #fff
+	border: 1px solid #d9d9d9
+	border-top: 1px solid #c0c0c0
+	padding: 0 8px
+	box-sizing: border-box
+
+
+button
+	border: 0px
+	color: #fff
+	text-shadow: 0 1px rgba(0,0,0,0.1)
+	background-color: #4d90fe
+	padding: 17px 0px
+	font-family: roboto
+	font-size: 14px
+
+.loginmodal-container a 
+	text-decoration: none
+	color: #666
+	font-weight: 400
+	text-align: center
+	display: inline-block
+	opacity: 0.6
+	transition: opacity ease 0.5s
+
+
+.login-help
+	font-size: 12px
+
+
 
 
 
@@ -100,7 +253,7 @@
 
 
 .footerContent
-	position: absolute
+	position: static
 	right: 0
 	left: 0
 	bottom: 0
@@ -108,9 +261,6 @@
 	padding: 40px 100px
 	background-color: #444
 	text-align: center
-	
-
-
 
 .footerContent .linkContainer
 	text-align: center
@@ -129,8 +279,6 @@
 	color:white
 	padding: 0px 10px
 	text-decoration: none
-
-
 
 .footerContent .SocialMediaContainer
 	text-align: center
@@ -153,3 +301,4 @@
 
 #socialLink
 	height: 50px
+

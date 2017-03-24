@@ -1,18 +1,31 @@
 ﻿doctype html
-html(ng-app = "next-update-stats")
+html
   head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title= title 
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js")
-    script(src='javascripts/next-update-stats.js')
+    script(src = "https://www.gstatic.com/firebasejs/3.6.10/firebase.js")
+    script(src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+    script(src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
 
+    script
+        |var config = {
+        |   apiKey: "AIzaSyC7iWe7sJJeHXLR-qv_bDZr8GRQhHjtztQ",
+        |   authDomain: "skillcourt-1e97e.firebaseapp.com",
+        |   databaseURL: "https://skillcourt-1e97e.firebaseio.com",
+        |   storageBucket: "skillcourt-1e97e.appspot.com",
+        |   messagingSenderId: "413613777767"
+        |};
+        |firebase.initializeApp(config);
+        |var provider = new firebase.auth.FacebookAuthProvider();
+            
 
-  body(ng-app = 'SkillCourt')
+        |var app = angular.module('SkillCourt', []);
+        |app.controller('MainCtrl', function($scope){
+        |   $scope.test = 'test';
+        |});
 
     include header
-    br
-    br
     block content
-    br
-    br
     include footer

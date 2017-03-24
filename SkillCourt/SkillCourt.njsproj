@@ -5,6 +5,9 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>SkillCourt</Name>
     <RootNamespace>SkillCourt</RootNamespace>
+    <EnableTypeScript>true</EnableTypeScript>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -31,12 +34,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="public\javascripts\header.js" />
+    <Compile Include="public\javascripts\signIn.js" />
+    <Compile Include="public\javascripts\standardCreateAccount.js" />
+    <Compile Include="public\javascripts\standardLogin.js" />
+    <Compile Include="public\javascripts\users.js" />
     <Compile Include="routes\about.js" />
     <Compile Include="routes\download.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\products.js" />
     <Compile Include="routes\signIn.js" />
     <Compile Include="bin\www" />
+    <Compile Include="routes\standardCreateAccount.js" />
+    <Compile Include="routes\standardLogin.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="start.js" />
     <Content Include="client\package.json" />
@@ -59,6 +69,8 @@
     <Content Include="views\error.jade" />
     <Content Include="views\products.jade" />
     <Content Include="views\signIn.jade" />
+    <Content Include="views\standardCreateAccount.jade" />
+    <Content Include="views\standardLogin.jade" />
     <Content Include="views\users.jade" />
   </ItemGroup>
   <ItemGroup>
@@ -73,10 +85,12 @@
     <Folder Include="typings\" />
     <Folder Include="typings\globals\" />
     <Folder Include="typings\globals\body-parser\" />
+    <Folder Include="typings\globals\bootstrap\" />
     <Folder Include="typings\globals\cookie-parser\" />
     <Folder Include="typings\globals\debug\" />
     <Folder Include="typings\globals\express-serve-static-core\" />
     <Folder Include="typings\globals\express\" />
+    <Folder Include="typings\globals\firebase\" />
     <Folder Include="typings\globals\jade\" />
     <Folder Include="typings\globals\mime\" />
     <Folder Include="typings\globals\morgan\" />
@@ -88,10 +102,12 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="typings\globals\body-parser\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\bootstrap\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\cookie-parser\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\debug\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\express-serve-static-core\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\express\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\firebase\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jade\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\mime\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\morgan\index.d.ts" />
