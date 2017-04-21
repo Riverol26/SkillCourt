@@ -19,9 +19,3 @@ function closeNav() {
     document.body.style.backgroundColor = "#ccc"
 
 }
-
-
-
-
-
-

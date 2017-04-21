@@ -8,17 +8,13 @@ var nodemon = require('nodemon');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var about = require('./routes/about');
 var signIn = require('./routes/signIn');
-var download = require('./routes/download');
-var products = require('./routes/products');
+var explore = require('./routes/explore');
 var standardLogin = require('./routes/standardLogin');
 var standardCreateAccount = require('./routes/standardCreateAccount');
 
 var firebase = require('firebase');
 var app = express();
-
-
 
 
 // view engine setup
@@ -37,10 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/about', about);
 app.use('/signIn', signIn);
-app.use('/download', download);
-app.use('/products', products);
+app.use('/explore', explore);
 app.use('/standardLogin', standardLogin);
 app.use('/standardCreateAccount', standardCreateAccount);
 

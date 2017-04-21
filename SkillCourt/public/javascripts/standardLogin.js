@@ -1,6 +1,4 @@
-﻿
-
-function login() {
+﻿function login() {
     var success = false;
     var emailAddress = document.getElementById('user').value;
     var password = document.getElementById('pass').value;
@@ -31,7 +29,7 @@ function login() {
         } else {
             sessionStorage.loggedIn = false;
             console.log('login failed');
-            login();
+            alert('login unsuccessful. Please check your credentials and try again.');
         }
     }
 }

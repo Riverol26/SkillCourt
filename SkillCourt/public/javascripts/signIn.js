@@ -1,10 +1,4 @@
-﻿var db;
-var temp = firebase.database().ref().once('value').then(function (snapshot) {
-    db = snapshot.val();
-});
-var user;
-sessionStorage.loggedIn = false;
-
+﻿
 
 function logUserFacebook() {
     firebase.auth().signInWithPopup(provider).then(function (result) {
@@ -13,9 +7,7 @@ function logUserFacebook() {
         if (user) {
             console.log('login successful');
             window.location.replace("/users");
-            
         } else {
-            sessionStorage.loggedIn = false;
             console.log('login failed');
             logUserFacebook();
         }
@@ -30,6 +22,7 @@ function logUserFacebook() {
 
 
 function writeData() {
+    // Writes the logged in user to the 'users' section of firebase
     var UId = firebase.auth().currentUser.uid;
     var Uemail = firebase.auth().currentUser.email;
     var Uname = firebase.auth().currentUser.displayName;

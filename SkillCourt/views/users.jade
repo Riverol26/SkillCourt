@@ -7,8 +7,17 @@ block content
             p.inline#name
             p.inline !
         hr
-        a(href = "#" onclick = "logout()") Log out
-        p#forms
+        .bodySection
+            h1 Single Player Match History
+        hr
+        .bodySection
+            h1 Multi-Player Match History
+        hr
+        .options
+            a.inline(href = "#" onclick = "logout()") Log out
+            p.inline  - 
+            a.inline(href = "#" onclick = "changePassword()") Change Password
+        .newForms#forms
         
 
     

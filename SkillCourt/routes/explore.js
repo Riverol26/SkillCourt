@@ -3,10 +3,9 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function (req, res) {
-    res.render('about',
+    res.render('explore',
     {
-        site: 'SkillCourt',
-        page: 'About'
+        site: 'SkillCourt'
     });
 });
 
